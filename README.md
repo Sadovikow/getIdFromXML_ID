@@ -56,5 +56,5 @@ function getIdIBFromXML_ID($xmlID) {
 # Использование функции в файле констант:
 
 ```php
-define("IBLOCK_ID_SKU_CATALOG", getIdIBFromXML_ID('catalog'));//id инфоблока предложений каталога
+define("IBLOCK_ID_SKU_CATALOG", getIdIBFromXML_ID('catalog')); // ID инфоблока предложений каталога
 ````
