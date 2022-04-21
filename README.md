@@ -53,6 +53,47 @@ function getIdIBFromXML_ID($xmlID) {
 
 	return $idIB;
 }
+
+// Функция получения id HighloadBlock от названия
+function getIdHighLoadBlockFromName($name) {
+  Loader::includeModule("highloadblock");
+  $idHL = '';
+
+  $hlblock = HL\HighloadBlockTable::getList([
+      'filter' => ['=NAME' => $name]
+  ])->fetch();
+
+  if ($hlblock['ID']) {
+    $idHL = $hlblock['ID'];
+  }
+
+  // Обработка ошибок
+  if (!$name) {
+    try
+    {
+        throw new SystemException("Не заполнено имя highload block");
+    }
+    catch (SystemException $exception)
+    {
+        echo $exception->getMessage();
+        die();
+    }
+  }
+
+  if (!$idHL) {
+		try
+		{
+		    throw new SystemException($xmlID."Неверное имя highload");
+		}
+		catch (SystemException $exception)
+		{
+		    echo $exception->getMessage();
+		    die();
+		}
+	}
+
+  return $idHL;
+}
 ```
 
 # Использование функции в файле констант:
