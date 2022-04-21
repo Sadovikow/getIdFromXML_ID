@@ -100,4 +100,5 @@ function getIdHighLoadBlockFromName($name) {
 
 ```php
 define("IBLOCK_ID_SKU_CATALOG", getIdIBFromXML_ID('catalog')); // ID инфоблока предложений каталога
+define('HIGHLOAD_BLOCK_COLORS', getIdHighLoadBlockFromName('higloadblock_code'));
 ````
